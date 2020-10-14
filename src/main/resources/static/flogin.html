@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="zh-CN">
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+    <meta content="CoreUI - Open Source Bootstrap Admin Template" name="description">
+    <meta content="Łukasz Holeczek" name="author">
+    <meta content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard" name="keyword">
+    <title>学习平台</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    <style type="text/css">
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-color: aliceblue;
+            background-position: center center #2D0F0F;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-image: url(img/leaves.jpg);
+        }
+    </style>
+</head>
+
+<body class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 " style="border:rgb(132, 168, 135) 3px solid;height: 450px;">
+                <!-- <div class="card-group" > -->
+                <!-- <div class="card p-4">
+                        <div class="card-body"> -->
+
+                <form action="/doLogin" method="POST">
+                    <h1 class="text-center" style="color: rgb(133, 190, 133);margin-top: 25px">账号登录</h1>
+                    <hr class="my-4 " style="border:1px solid rgb(100, 151, 100);width: 90%;">
+                    </hr>
+
+                    <p class="text-muted"></p>
+                    <div class="input-group mb-4 col-md-12">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+                        <input autofocus class="form-control" placeholder="账号" name="username" id="username" required type="text">
+                    </div>
+                    <div class="input-group mb-4 col-md-12">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-lock"></i>
+                            </span>
+                        </div>
+                        <input class="form-control" placeholder="密码" name="password" id="password" required type="password">
+                    </div>
+
+                    <div class="input-group mb-2 col-md-12">
+                        <div class="input-group-prepend">
+                            <p>
+                                <input class="form-control" id="verify" name="verify" placeholder="验证码" required
+                                    type="text">
+
+                        </div>
+                        <canvas height="40" id="verifyCanvas" width="100"></canvas>
+                        <img height="33px" id="code_img">
+                        </p>
+                    </div>
+
+
+                    <div class="form-group row col-md-12">
+                        <div class="col-md-12 col-form-label">
+                            <div class="form-check form-check-inline mr-1">
+                                <input class="form-check-input" id="inline-radio1" name="inline-radios" type="radio"
+                                    value="用户">
+                                <label class="form-check-label" for="inline-radio1">用户</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-1">
+                                <input class="form-check-input" id="inline-radio2" name="inline-radios" type="radio"
+                                    value="快递员">
+                                <label class="form-check-label" for="inline-radio2">快递员</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-1">
+                                <input class="form-check-input" id="inline-radio3" name="inline-radios" type="radio"
+                                    value="管理员">
+                                <label class="form-check-label" for="inline-radio3">管理员</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 ">
+                            <button class="btn btn-success btn-block" id="submit" type="submit">登录</button>
+                        </div>
+
+                    </div>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-6" style="margin-left:20px">
+                            <a class="btn btn-link px-0" href="fregister.html">注册新用户</button>
+                        </div>
+                        <div class="col-4 text-right">
+                            <a class="btn btn-link px-0"  href="fregister.html">忘记密码</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- </div>
+                    </div> -->
+            <!-- <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                    <div class="card-body text-center">
+                        <div>
+                            <nav class="navbar navbar-light bg-primary">
+                                <i aria-hidden="true" class="fa fa-graduation-cap fa-lg mt-3 px-3">iCollege学习平台</i>
+                            </nav>
+                            <p class="text-muted text-white">iCollege学习平台，为教与学服务！</p>
+                            <a class="btn btn-primary active mt-3" href="register.html">现在注册!</a>
+                        </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- CoreUI and necessary plugins-->
+    <script src="vendors/jquery/js/jquery.min.js"></script>
+    <script src="vendors/popper.js/js/popper.min.js"></script>
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendors/pace-progress/js/pace.min.js"></script>
+    <script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+    <script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+</body>
+<script>
+    var nums = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+        'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var colors = [];
+    drawCode();
+
+    // 绘制验证码
+    function drawCode() {
+        var canvas = document.getElementById("verifyCanvas"); //获取HTML端画布
+        var context = canvas.getContext("2d"); //获取画布2D上下文
+        context.fillStyle = "cornflowerblue"; //画布填充色
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        // 创建渐变
+        var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+        gradient.addColorStop("0", "magenta");
+        gradient.addColorStop("0.5", "blue");
+        gradient.addColorStop("1.0", "red");
+        //清空画布
+        context.fillStyle = gradient; //设置字体颜色
+        context.font = "25px Arial"; //设置字体
+        var rand = [];
+        var x = [];
+        var y = [];
+        for (var i = 0; i < 4; i++) {
+            rand[i] = nums[Math.floor(Math.random() * nums.length)];
+            x[i] = i * 16 + 10;
+            y[i] = Math.random() * 20 + 20;
+            context.fillText(rand[i], x[i], y[i]);
+        }
+        // console.log(rand);
+        //画3条随机线
+        for (var i = 0; i < 3; i++) {
+            drawline(canvas, context);
+        }
+
+        // 画30个随机点
+        for (var i = 0; i < 30; i++) {
+            drawDot(canvas, context);
+        }
+        convertCanvasToImage(canvas);
+
+
+        // 点击提交进行验证
+        $("#submit").click((e) => {
+            var newRand = rand.join('').toUpperCase();
+            console.log(newRand);
+
+            //下面就是判断是否== 的代码，无需解释
+            var oValue = $('#verify').val().toUpperCase();
+            console.log(oValue);
+            if (oValue == 0) {
+            } else if (oValue != newRand) {
+                oValue = ' ';
+            } else {
+                window.open('http://www.baidu.com', '_self');
+            }
+        })
+    }
+
+    // 随机线
+    function drawline(canvas, context) {
+        context.moveTo(Math.floor(Math.random() * canvas.width), Math.floor(Math.random() * canvas.height)); //随机线的起点x坐标是画布x坐标0位置，y坐标是画布高度的随机数
+        context.lineTo(Math.floor(Math.random() * canvas.width), Math.floor(Math.random() * canvas.height)); //随机线的终点x坐标是画布宽度，y坐标是画布高度的随机数
+        context.lineWidth = 0.5; //随机线宽
+        context.strokeStyle = 'rgba(50,50,50,0.3)'; //随机线描边属性
+        context.stroke(); //描边，即起点描到终点
+    }
+
+    // 随机点(所谓画点其实就是画1px像素的线，方法不再赘述)
+    function drawDot(canvas, context) {
+        var px = Math.floor(Math.random() * canvas.width);
+        var py = Math.floor(Math.random() * canvas.height);
+        context.moveTo(px, py);
+        context.lineTo(px + 1, py + 1);
+        context.lineWidth = 0.2;
+        context.stroke();
+
+    }
+
+    // 绘制图片
+    function convertCanvasToImage(canvas) {
+        document.getElementById("verifyCanvas").style.display = "none";
+        var image = document.getElementById("code_img");
+        image.src = canvas.toDataURL("image/png");
+        return image;
+    }
+
+    // 点击图片刷新
+    document.getElementById('code_img').onclick = function () {
+        $('#verifyCanvas').remove();
+        $('#verify').after('<canvas width="100" height="40" id="verifyCanvas"></canvas>');
+        drawCode();
+    }
+
+
+</script>
+
+<!--<script type="text/javascript">-->
+    <!--$(document).ready(function () {-->
+        <!--$("#submit").click(function () {-->
+            <!--var val = $('input:radio[name="inline-radios"]:checked').val();-->
+            <!--//alert("val="+val);-->
+            <!--if (val == "管理员") {-->
+                <!--window.location.href = "./index.html"-->
+            <!--}-->
+
+            <!--if (val == "教师") {-->
+                <!--window.location.href = "./tselect.html"-->
+            <!--}-->
+
+            <!--if (val == "学生") {-->
+                <!--window.location.href = "./student.html"-->
+            <!--}-->
+        <!--});-->
+    <!--})-->
+
+<!--</script>-->
+
+</html>

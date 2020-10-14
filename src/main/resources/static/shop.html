@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed">
+
+
+<header class="app-header navbar">
+
+    <a class="navbar-brand px-sm-5" href="#">
+        <!--<i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>-->
+        <h3 style="color: #0b731d">废宝网</h3>
+    </a>
+
+
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-sm-5">
+            <a class="nav-link active show" href="first.html">首页</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="jgxq.html">价格详情</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="csfp.html">供应信息</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="user.html">用户留言</a>
+        </li>
+    </ul>
+
+    <!--搜索框-->
+    <form class="form-inline px-sm-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="名称" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查找</button>
+    </form>
+    <!--</nav>-->
+
+
+    <!--<ul class="nav navbar-nav ml-auto">-->
+        <!--<li class="nav-item d-md-down-none">-->
+            <!--<a class="nav-link" href="flogin.html">-->
+                <!--<i class="fa fa-user-circle fa-2x mt-2"><h6>登录</h6></i>-->
+            <!--</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item d-md-down-none">-->
+            <!--<a class="nav-link" href="fregister.html">-->
+                <!--<i class="fa fa-pencil fa-2x mt-2"><h6>注册</h6></i>-->
+            <!--</a>-->
+        <!--</li>-->
+    <!--</ul>-->
+
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+
+
+<div class="app-body">
+
+    <main class="main" >
+        <div class="container-fluid" style="background-color: #e0f3f8; width: 100%; height: 100%">
+
+            <!-- 提交订单成功 -->
+            <div class="modal fade" id="successModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-success" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">提示</h4>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>提交成功</p>
+                        </div>
+                        <div class="modal-footer">
+                            <!--<button class="btn btn-success" type="button" data-dismiss="modal">返回-->
+                            <a class="nav-link" href="first.html">返回首页</a>
+                            <!--</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--填写地址-->
+            <div class="modal fade show" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 style="display:none;" aria-hidden="true">
+                <div class="modal-dialog modal-warning" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">填写地址</h4>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="card-body ">
+                            <form class="form-horizontal" action="" method="post">
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">收货人：</label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="text" id="sName" required
+                                               pattern="^[\u4e00-\u9fa5]{0,}$">
+                                        <div class="invalid-feedback">
+                                            用户名书写不规范！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">手机号码</label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="text" id="sTele" required
+                                               pattern="^[\u4e00-\u9fa5]{0,}$">
+                                        <div class="invalid-feedback">
+                                            书写不规范！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="hf-password">所在省</label>
+                                    <div class="col-md-6">
+                                        <input class="form-control" type="text" id="sPro" required
+                                               pattern="^[\u4e00-\u9fa5]{0,}$">
+                                    </div>
+                                    <label class="col-md-3 col-form-label">省</label>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="hf-password">订单编号</label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="text" id="sNo" required
+                                               readonly="readonly">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="textarea-input">详细地址</label>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" id="sArea" name="textarea-input"
+                                                  rows="5" placeholder="Content.."></textarea>
+                                    </div>
+                                </div>
+
+                            </form>
+                            <div class="modal-footer">
+                                <button class="btn btn-warning" type="button" id="success1" data-toggle="modal"
+                                        data-target="#success1Modal" onclick="save()">完成
+                                </button>
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 填写地址成功 -->
+            <div class="modal fade" id="success1Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-success" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">提示</h4>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>完成</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" type="button" data-dismiss="modal">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--插入图片-->
+            <div class="animated fadeIn">
+                <div class="row justify-content-center" style="height:100%">
+                    <div class="col-sm-6 mt-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mx-auto font-xl" style="width: 150px">
+                                    购买
+                                </div>
+                                <div class="col px-md-6 mt-3">
+                                    <div class="p-3 border-light bg-light">
+                                        <!--<i class="fa fa-podcast fa-lg mt-3 fa-2x " data-toggle="modal"-->
+                                        <!--data-target="#primaryModal" @click="edit(index)" style="color:orange"></i>-->
+                                        <!--填写地址-->
+                                        <i class="fa fa-podcast fa-lg mt-3 fa-2x " style="color:orange"></i>
+                                        <button class="btn  btn-outline-warning" data-toggle="modal"
+                                                data-target="#primaryModal" >填写地址
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <div class="card mb-3 ml-3" style="max-width: 500px;">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <img src="img/avatars/2.jpg" class="card-img" alt="...">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">废纸</h5>
+                                                    <p class="card-text">广西南宁出售大量废报纸</p>
+                                                    <p class="card-text">
+                                                        <small class="text-muted"></small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <p class="card-text">
+                                        <small class="text-muted">购买数量：1件</small>
+                                    </p>
+                                </div>
+                                <div class="form-group">
+                                    <p class="card-text">
+                                        <small class="text-muted">配送方式：快递，免邮</small>
+                                    </p>
+                                </div>
+                                <div class="form-group">
+                                    <p class="card-text">
+                                        <small class="text-muted">订单备注</small>
+                                    </p>
+                                    <textarea class="form-control" id="sRamark" required></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <small class="text-muted ml-3">合计：<i class="fa fa-cny fa-lg mt-4"
+                                                                         style="color:orange">15.00</i></small>
+                                </div>
+                                <div class="mx-auto float-left" style="width: 200px;">
+                                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                        <button class="btn btn-square btn-block btn-success" type="button"
+                                                onclick="pay()"
+                                                data-toggle="modal" data-target="#successModal1">付款
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+</div>
+
+
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock-min.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock.js"></script>
+<!--提交-->
+<script>
+    $("#success").click(function () {
+        $('#successModal1').modal('show')
+    });
+</script>
+
+<script>
+    $("#success1").click(function () {
+        $('#primaryModal').modal('hide')
+        $('#success1Modal').modal('show')
+    });
+</script>
+
+<script>
+    var addItem = {id: 0,mid:0, name: null, no: null, address: null, tele: null, remark: null, status: null,mstatus:null,type:null,price:null,role:null};
+    function edit() {
+        var sno = document.getElementById("sNo");
+        sno.value=Math.floor((Math.random()*9+1)*10000);
+        addItem.no=sno.value;
+    }
+
+    function save() {
+        var sname = document.getElementById("sName");
+        var stele = document.getElementById("sTele");
+        var sno = document.getElementById("sNo");
+        var spro = document.getElementById("sPro");
+        var sarea = document.getElementById("sArea");
+        addItem.id=all.items.length+1;
+        addItem.name = sname.value;
+        addItem.tele = stele.value;
+        addItem.address = spro.value + '省' + sarea.value;
+        sno.value=Math.floor((Math.random()*9+1)*10000);
+        addItem.no=sno.value;
+
+    }
+
+    function pay() {
+        var sremark = document.getElementById("sRamark");
+        addItem.remark = sremark.value;
+        addItem.status = "未接单";
+        // alert(addItem.id+addItem.address+addItem.tele+addItem.status+addItem.remark)
+        $.post("/nrders/create",
+            {
+                id: addItem.id,
+                name: addItem.name,
+                no: addItem.no,
+                remark: addItem.remark,
+                tele: addItem.tele,
+                address: addItem.address,
+                status:addItem.status,
+            },
+            function (data, status) {
+            });
+        all.items.push(addItem);
+        addItem.mstatus="未送达";
+        addItem.mid=tab.mitems.length+1;
+        addItem.type="废纸";
+        addItem.price="15";
+        addItem.role="买家";
+        alert(addItem.mid)
+        $.post("/myorder/create",
+            {
+                id: addItem.mid,
+                name: addItem.name,
+                no: addItem.no,
+                remark: addItem.remark,
+                type:addItem.type,
+                address: addItem.address,
+                status:addItem.mstatus,
+                price:addItem.price,
+                role:addItem.role,
+                tele:addItem.tele
+            },
+            function (data, status) {
+            });
+        tab.mitems.push(addItem);
+
+
+    }
+
+
+</script>
+
+
+<script>
+    var all;
+    var items = [];
+    $(function () {
+        $.getJSON("/nrders", function (response) {
+            items = response;
+            all = new Vue({
+                data: {
+                    items: items,
+
+                },
+            });
+            return
+        });
+    });
+</script>
+
+
+<script>
+    var tab;
+    var mitems = [];
+    $(function () {
+        $.getJSON("/myorder", function (response) {
+            mitems = response;
+            tab = new Vue({
+                data: {
+                    mitems: mitems ,
+
+                },
+            });
+            return
+        });
+    });
+</script>
+
+</body>
+
+</html>

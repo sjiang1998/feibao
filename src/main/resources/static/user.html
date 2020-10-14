@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+
+<head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+  <meta name="author" content="Łukasz Holeczek">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+  <title>CoreUI Free Bootstrap Admin Template</title>
+  <!-- Icons-->
+  <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+  <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+  <!-- Main styles for this application-->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed">
+
+
+  <header class="app-header navbar">
+
+    <a class="navbar-brand px-sm-5"  href="#" >
+      <!--<i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>-->
+      <h3 style="color: #0b731d">废宝网</h3>
+    </a>
+
+    <ul class="nav navbar-nav d-md-down-none">
+      <li class="nav-item px-sm-5">
+        <a class="nav-link " href="first.html">首页</a>
+      </li>
+      <li class="nav-item px-sm-5">
+        <a class="nav-link" href="jgxq.html">价格详情</a>
+      </li>
+      <li class="nav-item px-sm-5">
+        <a class="nav-link" href="csfp.html">供应信息</a>
+      </li>
+      <li class="nav-item px-sm-5">
+        <a class="nav-link active show" href="user.html">用户留言</a>
+      </li>
+      <li class="nav-item px-sm-5">
+        <a class="nav-link" href="my.html">我的</a>
+      </li>
+    </ul>
+
+    <!--搜索框-->
+      <form class="form-inline px-sm-5" >
+        <input class="form-control mr-sm-2" type="search" placeholder="名称" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查找</button>
+      </form>
+    <!--</nav>-->
+
+
+    <!--<ul class="nav navbar-nav ml-auto">-->
+      <!--<li class="nav-item d-md-down-none">-->
+        <!--<a class="nav-link" href="#">-->
+          <!--<i class="fa fa-user-circle fa-2x mt-2"><h6>登录</h6></i>-->
+        <!--</a>-->
+      <!--</li>-->
+      <!--<li class="nav-item d-md-down-none">-->
+        <!--<a class="nav-link" href="#">-->
+          <!--<i class="fa fa-pencil fa-2x mt-2"><h6>注册</h6></i>-->
+        <!--</a>-->
+      <!--</li>-->
+    <!--</ul>-->
+
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </header>
+
+
+  <div class="app-body">
+
+    <main class="main">
+      <div class="container-fluid" style="background-color: #e0f3f8; width: 100%; height: 100%">
+<!--插入图片-->
+        <div class="animated fadeIn">
+          <div class="row justify-content-center" style="height:100%">
+          <div class="col-sm-6 mt-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="mx-auto font-xl" style="width: 150px">
+                  <i class="fa fa-user-circle fa-lg mt-4 fa-2x" style="color: #c8ced3"></i>
+                  用户留言
+                </div>
+                <div class="col px-md-5 mt-3"><div class="p-3 border-light bg-light">如果您对我们有什么建议、投诉、需求，可以通过留言告诉我们，我们会第一时间了解并及时与您联系</div></div>
+                <div class="form-group mt-3">
+                  <label for="company">问题</label>
+                  <input class="form-control" id="company" type="text" placeholder=" ">
+                </div>
+                <div class="form-group">
+                  <label for="vat">昵称</label>
+                  <input class="form-control" id="vat" type="text" placeholder=" ">
+                </div>
+                <div class="form-group">
+                  <label for="street">邮箱</label>
+                  <input class="form-control" id="street" type="text" placeholder=" ">
+                </div>
+                <div class="form-group">
+                  <label for="country">需求</label>
+                  <!--<input class="form-control form-control-lg" id="country" type="text" placeholder="Country name">-->
+                  <textarea class="form-control" id="validationTextarea" placeholder="..." required></textarea>
+                </div>
+                <div class="mx-auto" style="width: 200px;">
+                  <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                    <button class="btn btn-square btn-block btn-success" type="button" id="success" data-toggle="modal" data-target="#successModal1">提交</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <!-- 提交订单成功 -->
+        <div class="modal fade" id="successModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             style="display: none;" aria-hidden="true">
+          <div class="modal-dialog modal-success" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">提示</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>提交成功</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-success" type="button" data-dismiss="modal">成功</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </main>
+  </div>
+
+  <footer class="app-footer">
+    <div>
+      <a href="https://coreui.io">CoreUI</a>
+      <span>&copy; 2018 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+      <span>Powered by</span>
+      <a href="https://coreui.io">CoreUI</a>
+    </div>
+  </footer>
+
+  <!-- CoreUI and necessary plugins-->
+  <script src="vendors/jquery/js/jquery.min.js"></script>
+  <script src="vendors/popper.js/js/popper.min.js"></script>
+  <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendors/pace-progress/js/pace.min.js"></script>
+  <script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+  <script src="vendors/@coreui/coreui/js/coreui.min.js"></script>
+  <script src="vendors/vue/vue.js"></script>
+  <script src="vendors/chart.js/js/Chart.min.js"></script>
+  <script src="vendors/mock/mock-min.js"></script>
+  <script src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js"></script>
+  <script src="js/widgets.js"></script>
+  <!--提交-->
+  <script>
+    $("#success").click(function () {
+      $('#successModal1').modal('show')
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed">
+
+
+<header class="app-header navbar">
+
+    <a class="navbar-brand px-sm-5" href="#">
+        <!--<i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>-->
+        <h3 style="color: #0b731d">废宝网</h3>
+    </a>
+
+
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-sm-5">
+            <a class="nav-link active show" href="first.html">首页</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="jgxq.html">价格详情</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="csfp.html">供应信息</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="user.html">用户留言</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="my.html">我的</a>
+        </li>
+    </ul>
+
+    <!--搜索框-->
+    <form class="form-inline px-sm-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="名称" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查找</button>
+    </form>
+    <!--</nav>-->
+
+
+    <!--<ul class="nav navbar-nav ml-auto">-->
+        <!--<li class="nav-item d-md-down-none">-->
+            <!--<a class="nav-link" href="flogin.html">-->
+                <!--<i class="fa fa-user-circle fa-2x mt-2"><h6>登录</h6></i>-->
+            <!--</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item d-md-down-none">-->
+            <!--<a class="nav-link" href="fregister.html">-->
+                <!--<i class="fa fa-pencil fa-2x mt-2"><h6>注册</h6></i>-->
+            <!--</a>-->
+        <!--</li>-->
+    <!--</ul>-->
+
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+
+
+<div class="app-body">
+    <main class="main">
+
+
+        <div class="container-fluid">
+            <div class="animated fadeIn">
+                <div class="card" id="itemsTemplater">
+
+                    <!-- 单项删除 -->
+                    <div class="modal fade" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-danger" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">提示</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>确定取消？</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                    <button class="btn btn-danger" type="button" data-toggle="modal"
+                                            @click="confindel()">确定
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 删除成功 -->
+                    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-success" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">提示</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>删除成功</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success" type="button" data-dismiss="modal">成功</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--退款-->
+                    <div class="modal fade show" id="primaryModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel"
+                         style="display:none;" aria-hidden="true">
+                        <div class="modal-dialog modal-primary" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">反馈</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="card-body ">
+                                    <form class="form-horizontal" action="" method="post">
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">订单编号</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="backNo"
+                                                       required  readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-email">收件人姓名</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="backName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">详细地址</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="backAddress"
+                                                       required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">收件人电话</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="backTele"
+                                                       required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">退款原因</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="backRemark"
+                                                       required>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                        <button class="btn btn-primary" type="button" @click="save()">保存
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="successModall" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-success" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">成功</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>保存成功</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">成功</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content-->
+                        </div>
+                        <!-- /.modal-dialog-->
+                    </div>
+
+                    <div class="card-header">
+                        <i class="icon-people mt-4"></i> 用户管理
+                        <div class="card-header-actions">
+                            <button class="card-header-action btn-setting" type="button" @click="renew()">
+                                <i class="icon-plus"></i> 刷新
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-responsive-sm table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="checkbox" value="checkbox" id="Selection"
+                                           v-model="allcheck"
+                                           @change="change"></th>
+                                <th>姓名</th>
+                                <th>订单号</th>
+                                <th>地址</th>
+                                <th>商品类型</th>
+                                <th>价格</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            <tr v-for="(item,index) in items">
+                                <td><input type="checkbox" name="checkbox" value="checkbox" v-model="item.isSeleted"
+                                           @change="checkOne"/>{{item.id}}
+                                </td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.no}}</td>
+                                <td>
+                                    <span class="badge badge-success" v-if="item.role=='买家'">送至：</span>
+                                    <span class="badge badge-info" v-if="item.role=='卖家'">发至：</span>
+                                    {{item.address}}</td>
+                                <td>{{item.type}}</td>
+                                <td>{{item.price}}</td>
+                                <td>
+                                    <span v-if="item.status=='未送达'" class="badge badge-secondary">{{item.status}}</span>
+                                    <span v-if="item.status=='可取件'" class="badge badge-primary">{{item.status}}</span>
+                                    <span v-if="item.status=='派送中'" class="badge badge-warning">{{item.status}}</span>
+                                    <span v-if="item.status=='退回中'" class="badge badge-info">{{item.status}}</span>
+                                    <span v-if="item.status=='已送达'" class="badge badge-success">{{item.status}}</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger" type="button" data-toggle="modal"
+                                            data-target="#dangerModal" @click="del(index)" v-if="item.status=='未送达'||item.status=='退回中'">
+                                        <i class="fa fa-trash-o"></i>取消订单
+                                    </button>
+                                    <button class="btn btn-danger" type="button" data-toggle="modal"
+                                            data-target="#primaryModal" @click="edit(index)" v-if="item.status=='可取件'&&item.role=='买家'">
+                                        <i class="fa fa-trash-o"></i>申请退款
+                                    </button>
+                                    <button class="btn btn-primary" type="button"  @click="buy(index)" v-if="item.role=='买家'&&item.status=='可取件'">
+                                        <i class="fa fa-check"></i>确认送达
+                                    </button>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" @click="Prev()">Prev</a>
+                            </li>
+                            <li class="page-item" v-for="n in pageCount" @click="pages(n)"
+                                v-bind:class="{ active: n==pageIndex+1 }">
+                                <a class="page-link">{{n}}</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" @click="Next()">Next</a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </main>
+</div>
+
+
+
+
+<footer class="app-footer">
+    <div>
+        <a href="https://coreui.io">CoreUI</a>
+        <span>&copy; 2018 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+        <span>Powered by</span>
+        <a href="https://coreui.io">CoreUI</a>
+    </div>
+</footer>
+
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock-min.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock.js"></script>
+
+
+<!--用户管理-->
+<script>
+    var all;
+    var items = [];
+    $(function () {
+        $.getJSON("/myorder", function (response) {
+            items = response;
+            var i;
+            for (i = 0; i < items.length; i++) {
+                items[i].isSeleted = false;
+            }
+            all = new Vue({
+                el: '#itemsTemplater',
+                data: {
+                    items: items,
+                    Id: -1,
+                    allcheck: false,
+                    Index: -1,
+                    edititem: {
+                        name: null,
+                        telephone: null,
+                        address: null
+                    },
+                    pageIndex: 0,
+                    pageSize: 10,
+                    total: items.length,
+                    addItem: {
+                        id: 0,
+                        name: null,
+                        telephone: null,
+                        address: null
+                    },
+                },
+                computed: {
+                    //页面起始
+                    pageItems: function () {
+                        var startIndex = all.pageIndex * all.pageSize;
+                        var endIndex = startIndex + tab.pageSize - 1;
+                        return all.items.filter(function (value, index) {
+                            return (index >= startIndex && index <= endIndex);
+                        });
+                    },
+
+                    //页面数
+                    pageCount: function () {
+                        var count = Math.ceil(this.total / this.pageSize);
+                        return count;
+                    }
+                },
+                methods: {
+                    change() {
+                        all.items.forEach(item => item.isSeleted = all.allcheck);
+                    },
+
+                    //反选
+                    checkOne() {
+                        all.allcheck = all.items.every(item => item.isSeleted);
+                    },
+
+
+                    del:function (i) {
+                        all.Index=i;
+                    },
+
+                    confindel:function () {
+                        $('#dangerModal').modal('hide');
+                        $('#successModal').modal('show');
+                        $.get("/myorder/delete/" + all.items[all.Index].id, function (response, status){
+                            all.items.splice(all.Index, 1);
+                        });
+                        for(var i=0;i<der.ditems.length;i++) {
+                            if(der.ditems[i].name==all.items[all.Index].name) {
+                                $.get("/nrders/delete/" + der.ditems[i].id, function (response, status) {
+                                    der.ditems.splice(i, 1);
+                                });
+                            }
+                        }
+                        for(var i=0;i<tab.mitems.length;i++) {
+                            if(tab.mitems[i].name==all.items[all.Index].name) {
+                                $.get("/orders/delete/" + tab.mitems[i].id, function (response, status) {
+                                    tab.mitems.splice(i, 1);
+                                });
+                            }
+                        }
+                    },
+
+                   edit:function (i) {
+                        all.Index=i;
+                        var bno=document.getElementById("backNo");
+                        bno.value=all.items[all.Index].no;
+                   },
+
+                   save:function () {
+                        var bno=document.getElementById("backNo");
+                        var bname=document.getElementById("backName");
+                        var baddress=document.getElementById("backAddress");
+                        var btele=document.getElementById("backTele");
+                        var bremark=document.getElementById("backRemark");
+                        all.items[all.Index].no=bno.value;
+                        all.items[all.Index].name=bname.value;
+                        all.items[all.Index].address=baddress.value;
+                        all.items[all.Index].tele=btele.value;
+                        all.items[all.Index].remark=bremark.value;
+                        all.items[all.Index].status="退回中";
+                        all.items[all.Index].role="卖家";
+                        $.post("/myorder/create",
+                            {
+                                id:all.items[all.Index].id,
+                                name:all.items[all.Index].name,
+                                no:all.items[all.Index].no,
+                                address:all.items[all.Index].address,
+                                tele:all.items[all.Index].tele,
+                                status:all.items[all.Index].status,
+                                type:all.items[all.Index].type,
+                                price:all.items[all.Index].price,
+                                role:all.items[all.Index].role,
+                                remark:all.items[all.Index].remark
+                            },
+                            function (data, status) {
+                            });
+                        for(var i=0;i<tab.mitems.length;i++) {
+                            if (tab.mitems[i].no == all.items[all.Index].no) {
+                                alert(tab.mitems[i].id)
+                                $.post("/orders/create",
+                                    {
+                                        id: tab.mitems[i].id,
+                                        name: all.items[all.Index].name,
+                                        no: tab.mitems[i].no,
+                                        address: all.items[all.Index].address,
+                                        tele: all.items[all.Index].tele,
+                                        status: all.items[all.Index].status,
+                                        remark: all.items[all.Index].remark
+                                    },
+                                    function (data, status) {
+                                    });
+                            }
+                        }
+                       $('#primaryModal').modal('hide');
+                       $('#successModall').modal('show');
+
+                   },
+                    buy:function (i) {
+                        all.Index=i;
+                        all.items[all.Index].status="已送达";
+                        $.post("/myorder/create",
+                            {
+                                id:all.Index+1,
+                                name:all.items[all.Index].name,
+                                no:all.items[all.Index].no,
+                                address:all.items[all.Index].address,
+                                tele:all.items[all.Index].tele,
+                                status:all.items[all.Index].status,
+                                type:all.items[all.Index].type,
+                                price:all.items[all.Index].price,
+                                role:all.items[all.Index].role,
+                                remark:all.items[all.Index].remark
+                            },
+                            function (data, status) {
+                            });
+
+                    },
+                    renew: function () {
+                        alert(1);
+                        $.ajaxSettings.async = false;
+                        for(var i=0;i<items.length;i++){
+                            if(items[i].status=="已送达"){
+                                $.get("/myorder/delete/"+all.items[i].id,function (respones,status) {
+                                    all.items.splice(i,1);
+                                });
+                                i--;
+                            }
+                        }
+                        $.ajaxSettings.async = true;
+                    },
+
+
+
+
+                }
+            });
+            return
+        });
+    });
+</script>
+
+<!--已接单-->
+<script>
+    var tab;
+    var mitems = [];
+    $(function () {
+        $.getJSON("/orders", function (response) {
+            mitems = response;
+            tab = new Vue({
+                data: {
+                    mitems: mitems ,
+
+                },
+            });
+            return
+        });
+    });
+</script>
+
+<!--//未接单-->
+<script>
+    var der;
+    var ditems = [];
+    $(function () {
+        $.getJSON("/nrders", function (response) {
+            ditems = response;
+            der = new Vue({
+                data: {
+                    ditems: ditems,
+
+                },
+            });
+            return
+        });
+    });
+
+</script>
+
+<script type="text/javascript" src="vendors/chart.js/js/Chart.min.js" class="view-script"></script>
+<script type="text/javascript" src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js"
+        class="view-script"></script>
+<script type="text/javascript" src="js/main.js" class="view-script"></script>
+
+</body>
+
+</html>

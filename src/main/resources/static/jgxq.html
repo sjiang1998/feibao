@@ -1,0 +1,760 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+  <meta name="author" content="Łukasz Holeczek">
+  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+  <title>CoreUI Pro Bootstrap Admin Template</title>
+
+  <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+  <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet">
+  <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-118965717-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <style type="text/css">
+    /* Chart.js */
+    @-webkit-keyframes chartjs-render-animation {
+      from {
+        opacity: 0.99
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes chartjs-render-animation {
+      from {
+        opacity: 0.99
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .chartjs-render-monitor {
+      -webkit-animation: chartjs-render-animation 0.001s;
+      animation: chartjs-render-animation 0.001s;
+    }
+  </style>
+  <style type="text/css">
+    /* Chart.js */
+    @-webkit-keyframes chartjs-render-animation {
+      from {
+        opacity: 0.99
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes chartjs-render-animation {
+      from {
+        opacity: 0.99
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    .chartjs-render-monitor {
+      -webkit-animation: chartjs-render-animation 0.001s;
+      animation: chartjs-render-animation 0.001s;
+    }
+  </style>
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed  pace-done pace-done">
+  <div class="pace  pace-inactive pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99"
+      style="transform: translate3d(100%, 0px, 0px);">
+      <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div>
+  </div>
+
+  <header class="app-header navbar">
+
+    <a class="navbar-brand px-sm-5"  href="#" >
+      <h3 style="color: #0b731d">废宝网</h3>
+    </a>
+
+    <ul class="nav navbar-nav d-md-down-none">
+      <li class="nav-item px-sm-5">
+        <a class="nav-link" href="first.html">首页</a>
+      </li>
+      <li class="nav-item px-sm-5">
+        <a class="nav-link  active show" href="jgxq.html">价格详情</a>
+      </li>
+      <li class="nav-item px-sm-5">
+        <a class="nav-link" href="csfp.html">供应信息</a>
+      </li>
+      <li class="nav-item px-sm-5">
+        <a class="nav-link" href="user.html">用户留言</a>
+      </li>
+      <li class="nav-item px-sm-5">
+        <a class="nav-link" href="my.html">我的</a>
+      </li>
+    </ul>
+
+    <!--搜索框-->
+    <form class="form-inline px-sm-5" >
+      <input class="form-control mr-sm-2" type="search" placeholder="名称" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查找</button>
+    </form>
+    <!--</nav>-->
+
+
+    <!--<ul class="nav navbar-nav ml-auto">-->
+      <!--<li class="nav-item d-md-down-none">-->
+        <!--<a class="nav-link" href="#">-->
+          <!--<i class="fa fa-user-circle fa-2x mt-2"><h6>登录</h6></i>-->
+        <!--</a>-->
+      <!--</li>-->
+      <!--<li class="nav-item d-md-down-none">-->
+        <!--<a class="nav-link" href="#">-->
+          <!--<i class="fa fa-pencil fa-2x mt-2"><h6>注册</h6></i>-->
+        <!--</a>-->
+      <!--</li>-->
+    <!--</ul>-->
+
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </header>
+
+  <div class="app-body">
+    <div class="sidebar">
+      <nav class="sidebar-nav ps ps--active-y">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="main.html">
+              <i class="nav-icon icon-speedometer"></i> Dashboard
+              <span class="badge badge-info">NEW</span>
+            </a>
+          </li>
+          <li class="nav-title">Theme</li>
+          <li class="nav-item">
+            <a class="nav-link" href="colors.html">
+              <i class="nav-icon icon-drop"></i> Colors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="typography.html">
+              <i class="nav-icon icon-pencil"></i> Typography</a>
+          </li>
+          <li class="nav-title">Components</li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-puzzle"></i> Base</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="base/breadcrumb.html">
+                  <i class="nav-icon icon-puzzle"></i> Breadcrumb</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/cards.html">
+                  <i class="nav-icon icon-puzzle"></i> Cards</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/carousel.html">
+                  <i class="nav-icon icon-puzzle"></i> Carousel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/collapse.html">
+                  <i class="nav-icon icon-puzzle"></i> Collapse</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/jumbotron.html">
+                  <i class="nav-icon icon-puzzle"></i> Jumbotron</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/list-group.html">
+                  <i class="nav-icon icon-puzzle"></i> List group</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/navs.html">
+                  <i class="nav-icon icon-puzzle"></i> Navs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/pagination.html">
+                  <i class="nav-icon icon-puzzle"></i> Pagination</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/popovers.html">
+                  <i class="nav-icon icon-puzzle"></i> Popovers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/progress.html">
+                  <i class="nav-icon icon-puzzle"></i> Progress</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/scrollspy.html">
+                  <i class="nav-icon icon-puzzle"></i> Scrollspy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/switches.html">
+                  <i class="nav-icon icon-puzzle"></i> Switches</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/tabs.html">
+                  <i class="nav-icon icon-puzzle"></i> Tabs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="base/tooltips.html">
+                  <i class="nav-icon icon-puzzle"></i> Tooltips</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-cursor"></i> Buttons</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="buttons/buttons.html">
+                  <i class="nav-icon icon-cursor"></i> Buttons</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="buttons/brand-buttons.html">
+                  <i class="nav-icon icon-cursor"></i> Brand Buttons</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="buttons/button-group.html">
+                  <i class="nav-icon icon-cursor"></i> Buttons Group</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="buttons/dropdowns.html">
+                  <i class="nav-icon icon-cursor"></i> Dropdowns</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="buttons/loading-buttons.html">
+                  <i class="nav-icon icon-cursor"></i> Loading Buttons
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+              <i class="nav-icon icon-pie-chart"></i> Charts</a>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon fa fa-code"></i> Editors</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="editors/code-editor.html">
+                  <i class="nav-icon icon-note"></i> Code Editor
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="editors/markdown-editor.html">
+                  <i class="nav-icon fa fa-code"></i> Markdown
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="editors/text-editor.html">
+                  <i class="nav-icon icon-note"></i> Rich Text Editor
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-note"></i> Forms</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="forms/basic-forms.html">
+                  <i class="nav-icon icon-note"></i> Basic Forms</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="forms/advanced-forms.html">
+                  <i class="nav-icon icon-note"></i> Advanced
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="forms/validation.html">
+                  <i class="nav-icon icon-note"></i> Validation
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="google-maps.html">
+              <i class="nav-icon icon-map"></i> Google Maps
+              <span class="badge badge-danger">PRO</span>
+            </a>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-star"></i> Icons</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="icons/coreui-icons.html">
+                  <i class="nav-icon icon-star"></i> CoreUI Icons
+                  <span class="badge badge-success">NEW</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons/flags.html">
+                  <i class="nav-icon icon-star"></i> Flags</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons/font-awesome.html">
+                  <i class="nav-icon icon-star"></i> Font Awesome
+                  <span class="badge badge-secondary">4.7</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons/simple-line-icons.html">
+                  <i class="nav-icon icon-star"></i> Simple Line Icons</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-bell"></i> Notifications</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="notifications/alerts.html">
+                  <i class="nav-icon icon-bell"></i> Alerts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="notifications/badge.html">
+                  <i class="nav-icon icon-bell"></i> Badge</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="notifications/modals.html">
+                  <i class="nav-icon icon-bell"></i> Modals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="notifications/toastr.html">
+                  <i class="nav-icon icon-bell"></i> Toastr
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-energy"></i> Plugins</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="plugins/calendar.html">
+                  <i class="nav-icon icon-calendar"></i> Calendar
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="plugins/draggable-cards.html">
+                  <i class="nav-icon icon-cursor-move"></i> Draggable
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="plugins/sliders.html">
+                  <i class="nav-icon icon-equalizer"></i> Sliders
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="plugins/spinners.html">
+                  <i class="nav-icon fa fa-spinner"></i> Spinners
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-list"></i> Tables</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="tables/tables.html">
+                  <i class="nav-icon icon-list"></i> Standard Tables</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tables/datatables.html">
+                  <i class="nav-icon icon-list"></i> DataTables
+                  <span class="badge badge-danger">PRO</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lookback.html">
+              <i class="nav-icon icon-calculator"></i> Widgets
+              <span class="badge badge-info">NEW</span>
+            </a>
+          </li>
+          <li class="nav-divider"></li>
+          <li class="nav-title">Extras</li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-star"></i> Pages</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="login.html" target="_top">
+                  <i class="nav-icon icon-star"></i> Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="register.html" target="_top">
+                  <i class="nav-icon icon-star"></i> Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="success.html" target="_top">
+                  <i class="nav-icon icon-star"></i> Error 404</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="500.html" target="_top">
+                  <i class="nav-icon icon-star"></i> Error 500</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="nav-icon icon-layers"></i> Apps</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                  <i class="nav-icon icon-speech"></i> Invoicing</a>
+                <ul class="nav-dropdown-items">
+                  <li class="nav-item">
+                    <a class="nav-link" href="apps/invoicing/invoice.html">
+                      <i class="nav-icon icon-speech"></i> Invoice
+                      <span class="badge badge-danger">PRO</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                  <i class="nav-icon icon-speech"></i> Email</a>
+                <ul class="nav-dropdown-items">
+                  <li class="nav-item">
+                    <a class="nav-link" href="apps/email/inbox.html">
+                      <i class="nav-icon icon-speech"></i> Inbox
+                      <span class="badge badge-danger">PRO</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="apps/email/message.html">
+                      <i class="nav-icon icon-speech"></i> Message
+                      <span class="badge badge-danger">PRO</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="apps/email/compose.html">
+                      <i class="nav-icon icon-speech"></i> Compose
+                      <span class="badge badge-danger">PRO</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-divider"></li>
+          <li class="nav-title">Labels</li>
+          <li class="nav-item d-compact-none d-minimized-none">
+            <a class="nav-label" href="#">
+              <i class="fa fa-circle text-danger"></i> Label danger</a>
+          </li>
+          <li class="nav-item d-compact-none d-minimized-none">
+            <a class="nav-label" href="#">
+              <i class="fa fa-circle text-info"></i> Label info</a>
+          </li>
+          <li class="nav-item d-compact-none d-minimized-none">
+            <a class="nav-label" href="#">
+              <i class="fa fa-circle text-warning"></i> Label warning</a>
+          </li>
+          <li class="nav-divider"></li>
+          <li class="nav-title">System Utilization</li>
+          <li class="nav-item px-3 d-compact-none d-minimized-none">
+            <div class="text-uppercase mb-1">
+              <small>
+                <b>CPU Usage</b>
+              </small>
+            </div>
+            <div class="progress progress-xs">
+              <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <small class="text-muted">348 Processes. 1/4 Cores.</small>
+          </li>
+          <li class="nav-item px-3 d-compact-none d-minimized-none">
+            <div class="text-uppercase mb-1">
+              <small>
+                <b>Memory Usage</b>
+              </small>
+            </div>
+            <div class="progress progress-xs">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <small class="text-muted">11444GB/16384MB</small>
+          </li>
+          <li class="nav-item px-3 mb-3 d-compact-none d-minimized-none">
+            <div class="text-uppercase mb-1">
+              <small>
+                <b>SSD 1 Usage</b>
+              </small>
+            </div>
+            <div class="progress progress-xs">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <small class="text-muted">243GB/256GB</small>
+          </li>
+        </ul>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+          <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; height: 658px; right: 0px;">
+          <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 339px;"></div>
+        </div>
+      </nav>
+      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+    </div>
+    <main class="main">
+
+      <!--<ol class="breadcrumb">-->
+        <!--<li class="breadcrumb-item"></li>-->
+      <!--</ol>-->
+
+      <div class="container-fluid">
+        <div class="animated fadeIn" id="itemsTemplater">
+
+          <div class="card">
+            <div class="card-header">
+              <div class="mx-auto font-2xl" style="width: 200px">
+                  <i class="fa fa-podcast fa-lg mt-3 fa-4 " style="color: #0b731d"></i> 最新价格行情
+              </div>
+            </div>
+
+            <div class="card-body">
+              <table class="table table-responsive-sm table-bordered table-striped text-center">
+                <thead>
+                  <tr>
+                    <!--<th>类别</th>-->
+                    <th>废品名</th>
+                    <th>价格</th>
+                    <th>涨跌</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template v-for="(item,index) in pageItems">
+                    <tr>
+                      <td>{{item.name}}</td>
+                      <td>{{item.role}}</td>
+                      <td style="color: #94171c">
+                        {{item.status}}
+                          <!--<span v-if="item.status=='上涨'" class="badge badge-danger">{{item.status}}</span>-->
+                          <!--<span v-if="item.status=='平'" class="badge badge-primary">{{item.status}}</span>-->
+                          <!--<span v-if="item.status=='下跌'" class="badge badge-success">{{item.status}}</span>-->
+                      </td>
+                    </tr>
+                  </template>
+                </tbody>
+              </table>
+
+              <ul class="pagination" >
+                <li class="page-item">
+                  <a class="page-link" href="#"  @click="Prev()">Prev</a>
+                </li>
+                <li class="page-item " v-for="n in pageCount" @click="pagec(n)"
+                  v-bind:class="{ active: n==pageIndex+1 }">
+                  <a class="page-link" href="#">{{n}}</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" @click="Next()">Next</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+  <!--</div>-->
+  </main>
+
+  </div>
+  <footer class="app-footer">
+    <div>
+      <a href="https://coreui.io/pro/">CoreUI Pro</a>
+      <span>© 2018 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+      <span>Powered by</span>
+      <a href="https://coreui.io/pro/">CoreUI Pro</a>
+    </div>
+  </footer>
+
+
+
+
+  <script src="vendors/jquery/js/jquery.min.js"></script>
+  <script src="vendors/popper.js/js/popper.min.js"></script>
+  <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendors/pace-progress/js/pace.min.js"></script>
+  <script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+  <script src="vendors/@coreui/coreui-pro/js/coreui.min.js"></script>
+  <script src="vendors/mock/mock-min.js"></script>
+  <script src="vendors/vue/vue.js"></script>
+  <script>
+    $('#ui-view').ajaxLoad();
+    $(document).ajaxComplete(function () {
+      Pace.restart()
+    });
+  </script>
+  <script>
+    var tab;
+    var items = [];
+    $(function () {
+      Mock.mock("http://127.0.0.1:5500/widgets", {
+        "data|25": [
+          {
+            // "kinds|1": ["废纸", "废塑料", "废铁"],
+            //"id|+1": 201706120001,
+            "name|1": ["废报纸", "塑料瓶", "废铁"],
+            "role|1": ["3.00元/斤", "2.00元/斤", "7.00元/斤"],
+            // registerDate: "null",
+            "status|1": ["+8", "-3", "平","-1","+5"],
+          }
+        ],
+        success: true,
+        code: 200,
+        msg: "Success"
+      });
+
+      $.getJSON("http://127.0.0.1:5500/widgets", function (response) {
+        items = response.data;
+        for (var i = 0; i < items.length; i++) {
+          items[i].isSeleted = false;
+        }
+        tab = new Vue({
+          el: '#itemsTemplater',
+          data: {
+            items: items,
+            Id: -1,
+            allcheck: false,
+            editIndex: -1,
+            editItem: { name: null, role: null, registerDate: null, status: null },
+            pageSize: 8,
+            pageIndex: 0,
+            total: items.length,
+            addItem: { id: null, name: null, role: null, registerDate: new Date(), status: null },
+            checkstatus:-1,
+            // arrive:0, //已签到
+            // afleave:0, //请假
+            // absent:0,  //旷课
+
+          },
+
+
+          computed: {
+            //页面起始
+            pageItems: function () {
+              var startIndex = this.pageIndex * this.pageSize;
+              var endIndex = startIndex + this.pageSize - 1;
+
+              return this.items.filter(function (value, index) {
+                return (index >= startIndex && index <= endIndex);
+              });
+            },
+
+            //页面数
+            pageCount: function () {
+              var count = Math.ceil(this.total / this.pageSize);
+              return count;
+            }
+          },
+
+
+          methods: {
+            //单项删除
+            // del: function (den) {
+            //   $('#dangerModal').modal('show');
+            //   Id = den-1;
+            // },
+            // confindel: function () {
+            //   this.items.splice(Id, 1);
+            //   $('#dangerModal').modal('hide');
+            //   $('#successModal').modal('show');
+            // },
+
+            //全选
+            change() {
+              this.items.forEach(item => item.isSeleted = this.allcheck);
+            },
+
+            //反选
+            checkOne() {
+              this.allcheck = this.items.every(item => item.isSeleted);
+            },
+            //页面处理
+              pagec:function(pc){
+                   this.pageIndex=pc-1;
+
+            },
+
+            Prev(){
+              if(this.pageIndex>0){
+                this.pageIndex=this.pageIndex-1;
+              }
+            },
+
+            Next(){
+
+              if(this.pageIndex<this.pageCount-1){
+                this.pageIndex=this.pageIndex+1;
+              }
+            }
+
+          }
+
+        });
+        return;
+      });
+
+    });
+  </script>
+
+
+
+  <script type="text/javascript" src="vendors/chart.js/js/Chart.min.js" class="view-script"></script>
+  <script type="text/javascript" src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js"
+    class="view-script"></script>
+  <script type="text/javascript" src="js/main.js" class="view-script"></script>
+
+
+</body>
+
+</html>

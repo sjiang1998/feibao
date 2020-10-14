@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Free Bootstrap Admin Template</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed">
+
+
+<header class="app-header navbar">
+
+    <a class="navbar-brand px-sm-5" href="#">
+        <!--<i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>-->
+        <h3 style="color: #0b731d">废宝网</h3>
+    </a>
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="first.html">首页</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="jgxq.html">价格详情</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link active show" href="csfp.html">供应信息</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="user.html">用户留言</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="my.html">我的</a>
+        </li>
+    </ul>
+
+    <!--搜索框-->
+    <form class="form-inline px-sm-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="名称" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查找</button>
+    </form>
+    <!--</nav>-->
+
+
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="fabu.html">
+                <i class="fa fa-telegram fa-2x mt-2"><h6>发布</h6></i>
+            </a>
+        </li>
+        <!--<li class="nav-item d-md-down-none">-->
+        <!--<a class="nav-link" href="#">-->
+        <!--<i class="fa fa-user-circle fa-2x mt-2"><h6>登录</h6></i>-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item d-md-down-none">-->
+        <!--<a class="nav-link" href="#">-->
+        <!--<i class="fa fa-pencil fa-2x mt-2"><h6>注册</h6></i>-->
+        <!--</a>-->
+        <!--</li>-->
+    </ul>
+
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+
+
+<div class="app-body">
+
+    <main class="main">
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb">
+
+            <!-- 全部 -->
+            <div class="row">
+                <div class="col">
+                    <ul class="nav nav-pills mb-1" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active show" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                               role="tab" aria-controls="pills-home" aria-selected="false">全部</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                               role="tab" aria-controls="pills-profile" aria-selected="false">废纸</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#pills-contact"
+                               role="tab" aria-controls="pills-contact" aria-selected="true">废塑料</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content  border-white" id="pills-tabContent">
+                        <!--全部-->
+                        <div class="tab-pane fade active show" id="pills-home" role="tabpanel"
+                             aria-labelledby="pills-home-tab">
+
+                            <div class="animated fadeIn">
+                                <div class="row">
+                                    <div class="card mb-3" style="max-width: 100%; max-height: 15%">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <img src="img/avatars/2.jpg" class="card-img">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">大量收购废报纸、书本</h5>
+                                                    <p class="card-text">
+                                                    <ul class="list-unstyled">
+                                                        <li>公司简介:</li>
+                                                        <li>本公司长期从事废旧书刊、报纸，纸箱、纸盒、皮纸等以及各类塑料，饮料瓶回收！</li>
+                                                        <li>我们收购站收购要求货量大，质量优，水分少。高价回收，平等交易。</li>
+                                                        <li>我们提供上门回收业务，上门看货。</li>
+                                                        <li>价格：<i class="fa fa-cny fa-lg mt-4" style="color:coral">1.00/斤</i>
+                                                        </li>
+                                                        <button type="button"
+                                                                class="btn btn-outline-success btn-lg float-right mr-5"
+                                                                data-toggle="modal" data-target="#primaryModal"
+                                                                onclick="edit()">提交订单
+                                                        </button>
+                                                    </ul>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <small class="text-muted">联系商家：14576892098</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.row-->
+
+                                <div class="row">
+                                    <div class="card mb-3" style="max-width: 100%; max-height: 10%">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <img src="img/avatars/3.jpg" class="card-img">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">大量收购废报纸、书本</h5>
+                                                    <p class="card-text">
+                                                    <ul class="list-unstyled">
+                                                        <li>公司简介:</li>
+                                                        <li>本公司长期从事废旧书刊、报纸，纸箱、纸盒、皮纸等以及各类塑料，饮料瓶回收！</li>
+                                                        <li>我们收购站收购要求货量大，质量优，水分少。高价回收，平等交易。</li>
+                                                        <li>我们提供上门回收业务，上门看货。</li>
+                                                        <li>价格：<i class="fa fa-cny fa-lg mt-4" style="color:coral">1.00/斤</i>
+                                                            <button type="button"
+                                                                    class="btn btn-outline-success btn-lg float-right mr-5"
+                                                                    data-toggle="modal" data-target="#primaryModal"
+                                                                    onclick="edit()">提交订单
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <small class="text-muted">联系商家：14576892098</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!--废纸-->
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                             aria-labelledby="pills-profile-tab">
+
+                            <div class="animated fadeIn">
+                                <div class="row">
+                                    <div class="card mb-3" style="max-width: 100%; max-height: 15%">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <img src="img/avatars/2.jpg" class="card-img">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">大量收购废报纸、书本</h5>
+                                                    <p class="card-text">
+                                                    <ul class="list-unstyled">
+                                                        <li>公司简介:</li>
+                                                        <li>本公司长期从事废旧书刊、报纸，纸箱、纸盒、皮纸等以及各类塑料，饮料瓶回收！</li>
+                                                        <li>我们收购站收购要求货量大，质量优，水分少。高价回收，平等交易。</li>
+                                                        <li>我们提供上门回收业务，上门看货。</li>
+                                                        <li>价格：<i class="fa fa-cny fa-lg mt-4" style="color:coral">1.00/斤</i>
+                                                        </li>
+                                                        <button type="button"
+                                                                class="btn btn-outline-success btn-lg float-right mr-5"
+                                                                data-toggle="modal" data-target="#primaryModal"
+                                                                onclick="edit()">提交订单
+                                                        </button>
+                                                    </ul>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <small class="text-muted">联系商家：14576892098</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.row-->
+
+                                <div class="row">
+                                    <div class="card mb-3" style="max-width: 100%; max-height: 10%">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <img src="img/avatars/2.jpg" class="card-img">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">大量收购废报纸、书本</h5>
+                                                    <p class="card-text">
+                                                    <ul class="list-unstyled">
+                                                        <li>公司简介:</li>
+                                                        <li>本公司长期从事废旧书刊、报纸，纸箱、纸盒、皮纸等以及各类塑料，饮料瓶回收！</li>
+                                                        <li>我们收购站收购要求货量大，质量优，水分少。高价回收，平等交易。</li>
+                                                        <li>我们提供上门回收业务，上门看货。</li>
+                                                        <li>价格：<i class="fa fa-cny fa-lg mt-4" style="color:coral">1.00/斤</i>
+                                                            <button type="button"
+                                                                    class="btn btn-outline-success btn-lg float-right mr-5"
+                                                                    data-toggle="modal" data-target="#primaryModal"
+                                                                    onclick="edit()">提交订单
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <small class="text-muted">联系商家：14576892098</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--废塑料-->
+                        <div class="tab-pane fade " id="pills-contact" role="tabpanel"
+                             aria-labelledby="pills-contact-tab">
+
+                            <div class="animated fadeIn">
+                                <div class="row">
+                                    <div class="card mb-3" style="max-width: 100%; max-height: 15%">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <img src="img/avatars/3.jpg" class="card-img">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">大量收购废报纸、书本</h5>
+                                                    <p class="card-text">
+                                                    <ul class="list-unstyled">
+                                                        <li>公司简介:</li>
+                                                        <li>本公司长期从事废旧书刊、报纸，纸箱、纸盒、皮纸等以及各类塑料，饮料瓶回收！</li>
+                                                        <li>我们收购站收购要求货量大，质量优，水分少。高价回收，平等交易。</li>
+                                                        <li>我们提供上门回收业务，上门看货。</li>
+                                                        <li>价格：<i class="fa fa-cny fa-lg mt-4" style="color:coral">1.00/斤</i>
+                                                        </li>
+                                                        <button type="button"
+                                                                class="btn btn-outline-success btn-lg float-right mr-5"
+                                                                data-toggle="modal" data-target="#primaryModal"
+                                                                onclick="edit()">提交订单
+                                                        </button>
+                                                    </ul>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <small class="text-muted">联系商家：14576892098</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.row-->
+
+                                <div class="row">
+                                    <div class="card mb-3" style="max-width: 100%; max-height: 10%">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-4">
+                                                <img src="img/avatars/3.jpg" class="card-img">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">大量收购废报纸、书本</h5>
+                                                    <p class="card-text">
+                                                    <ul class="list-unstyled">
+                                                        <li>公司简介:</li>
+                                                        <li>本公司长期从事废旧书刊、报纸，纸箱、纸盒、皮纸等以及各类塑料，饮料瓶回收！</li>
+                                                        <li>我们收购站收购要求货量大，质量优，水分少。高价回收，平等交易。</li>
+                                                        <li>我们提供上门回收业务，上门看货。</li>
+                                                        <li>价格：<i class="fa fa-cny fa-lg mt-4" style="color:coral">1.00/斤</i>
+                                                            <button type="button"
+                                                                    class="btn btn-outline-success btn-lg float-right mr-5"
+                                                                    data-toggle="modal" data-target="#primaryModal"
+                                                                    onclick="edit()">提交订单
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                    </p>
+                                                    <p class="card-text">
+                                                        <small class="text-muted">联系商家：14576892098</small>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <li class="breadcrumb-menu d-md-down-none">
+            </li>
+        </ol>
+        <div class="container-fluid">
+            <!-- 提交订单-->
+            <div class="modal fade show" id="primaryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 style="display:none;" aria-hidden="true">
+                <div class="modal-dialog modal-success" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">订单编辑</h4>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="card-body ">
+                            <form class="form-horizontal" action="" method="post">
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="hf-email">真实姓名：</label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="text" id="sName" required
+                                               pattern="^[\u4e00-\u9fa5]{0,}$">
+                                        <div class="invalid-feedback">
+                                            用户名书写不规范！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="hf-email">联系电话</label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="text" id="sTele" required
+                                               pattern="^[\u4e00-\u9fa5]{0,}$">
+                                        <div class="invalid-feedback">
+                                            书写不规范！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="hf-email">商品类型</label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="text" id="sType" required
+                                               pattern="^[\u4e00-\u9fa5]{0,}$">
+                                        <div class="invalid-feedback">
+                                            书写不规范！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="hf-email">价格</label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="text" id="sPrice" required
+                                               pattern="^[\u4e00-\u9fa5]{0,}$">
+                                        <div class="invalid-feedback">
+                                            书写不规范！
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="hf-password">订单编号</label>
+                                    <div class="col-md-9">
+                                        <input class="form-control" type="text" id="sNo" required
+                                               readonly="readonly">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="textarea-input">详细地址</label>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" id="sAddress" name="textarea-input" rows="5"
+                                                  placeholder="Content.."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label" for="textarea-input">备注</label>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" id="sBei" name="textarea-input" rows="5"
+                                                  placeholder="Content.."></textarea>
+                                    </div>
+                                </div>
+
+                            </form>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" type="button" id="success" data-toggle="modal"
+                                        data-target="#success1Modal" onclick="save()">提交
+                                </button>
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 提交订单成功 -->
+            <div class="modal fade" id="success1Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-success" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">提示</h4>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>提交成功</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" type="button" data-dismiss="modal">成功</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+
+<footer class="app-footer">
+    <div>
+        <a href="https://coreui.io">CoreUI</a>
+        <span>&copy; 2018 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+        <span>Powered by</span>
+        <a href="https://coreui.io">CoreUI</a>
+    </div>
+</footer>
+
+
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="vendors/@coreui/coreui-pro/js/coreui.min.js"></script>
+<script src="vendors/mock/mock-min.js"></script>
+<script src="vendors/vue/vue.js"></script>
+<script>
+    $('#ui-view').ajaxLoad();
+    $(document).ajaxComplete(function () {
+        Pace.restart()
+    });
+</script>
+
+<script>
+    $("#success").click(function () {
+        $('#primaryModal').modal('hide')
+        $('#success1Modal').modal('show')
+    });
+</script>
+<script>
+    var addItem = {
+        id: 0,
+        mid: 0,
+        name: null,
+        no: null,
+        address: null,
+        tele: null,
+        remark: null,
+        status: null,
+        mstatus: null,
+        type: null,
+        price: null,
+        role: null
+    };
+
+    function edit() {
+        var sno = document.getElementById("sNo");
+        sno.value = Math.floor((Math.random() * 9 + 1) * 10000);
+        addItem.no = sno.value;
+
+    }
+
+    function save() {
+        addItem.id = all.items.length + 1;
+        var sname = document.getElementById("sName");
+        addItem.name = sname.value;
+        var stele = document.getElementById("sTele");
+        addItem.tele = stele.value;
+        var sno = document.getElementById("sNo");
+        sno.value = Math.floor((Math.random() * 9 + 1) * 10000);
+        addItem.no = sno.value;
+        var saddress = document.getElementById("sAddress");
+        addItem.address = saddress.value;
+        var sremark = document.getElementById("sBei");
+        addItem.remark = sremark.value;
+        var stype = document.getElementById("sType");
+        addItem.type = stype.value;
+        var sprice = document.getElementById("sPrice");
+        addItem.price = sprice.value;
+        addItem.status = "未送达";
+        addItem.role = "卖家";
+        alert(addItem.id)
+        $.post("/myorder/create",
+            {
+                id: addItem.id,
+                name: addItem.name,
+                no: addItem.no,
+                remark: addItem.remark,
+                type: addItem.type,
+                address: addItem.address,
+                status: addItem.status,
+                price: addItem.price,
+                role: addItem.role,
+                tele: addItem.tele
+            },
+            function (data, status) {
+            });
+        all.items.push(addItem);
+
+        addItem.mid = tab.nitems.length + 1;
+        addItem.mstatus="未接单";
+        $.post("/nrders/create",
+            {
+                id: addItem.mid,
+                name: addItem.name,
+                no: addItem.no,
+                remark: addItem.remark,
+                tele: addItem.tele,
+                address: addItem.address,
+                status: addItem.mstatus,
+            },
+            function (data, status) {
+            });
+        tab.nitems.push(addItem);
+
+
+    }
+
+</script>
+
+
+<script>
+    var all;
+    var items = [];
+    $(function () {
+        $.getJSON("/myorder", function (response) {
+            items = response;
+            all = new Vue({
+                data: {
+                    items: items,
+
+                },
+            });
+            return;
+        });
+
+    });
+</script>
+
+<script>
+    var tab;
+    var nitems = [];
+    $(function () {
+        $.getJSON("/nrders", function (response) {
+            nitems = response;
+            tab = new Vue({
+                data: {
+                    nitems: nitems,
+
+                },
+            });
+            return;
+        });
+
+    });
+</script>
+
+
+<script type="text/javascript" src="vendors/chart.js/js/Chart.min.js" class="view-script"></script>
+<script type="text/javascript" src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js"
+        class="view-script"></script>
+<script type="text/javascript" src="js/main.js" class="view-script"></script>
+</body>
+
+</html>

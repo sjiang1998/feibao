@@ -1,0 +1,1091 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Pro Bootstrap Admin Template</title>
+
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-118965717-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <style type="text/css">
+        /* Chart.js */
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+    <style type="text/css">
+        /* Chart.js */
+        @-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed  pace-done pace-done">
+
+<!--导航栏-->
+<header class="app-header navbar" style="background-color: #dcfbd0">
+
+    <a class="navbar-brand px-sm-5" href="#">
+        <!--<i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>-->
+        <h3 style="color: #0b731d">废宝网</h3>
+    </a>
+
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-sm-5">
+            <a class="nav-link" href="myself.html">快递员个人中心</a>
+        </li>
+        <li class="nav-item px-sm-3">
+            <a class="nav-link" href="courier_dingdan.html">快递员管理中心</a>
+        </li>
+
+    </ul>
+
+    <!--搜索框-->
+    <form class="form-inline px-sm-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="请输入关键字查找" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查找</button>
+    </form>
+    <!--</nav>-->
+
+
+
+
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+<div class="pace  pace-inactive pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99"
+         style="transform: translate3d(100%, 0px, 0px);">
+        <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div>
+</div>
+
+<!--导航栏-->
+
+<header class="app-header navbar" style="background-color: #dcfbd0">
+
+    <a class="navbar-brand px-sm-5" href="#">
+        <!--<i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>-->
+        <h3 style="color: #0b731d">废宝网-物流</h3>
+    </a>
+
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-sm-6">
+            <a class="nav-link" href="courier_center.html">快递员个人中心</a>
+        </li>
+        <li class="nav-item px-sm-6">
+            <a class="nav-link" href="courier_dingdan.html">快递员订单中心</a>
+        </li>
+
+    </ul>
+
+    <!--搜索框-->
+    <form class="form-inline px-sm-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="请输入关键字查找" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查找</button>
+    </form>
+    <!--</nav>-->
+
+
+
+
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+
+<div class="app-body">
+    <div class="sidebar">
+        <nav class="sidebar-nav ps ps--active-y">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="main.html">
+                        <i class="nav-icon icon-speedometer"></i> Dashboard
+                        <span class="badge badge-info">NEW</span>
+                    </a>
+                </li>
+                <li class="nav-title">Theme</li>
+                <li class="nav-item">
+                    <a class="nav-link" href="colors.html">
+                        <i class="nav-icon icon-drop"></i> Colors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="typography.html">
+                        <i class="nav-icon icon-pencil"></i> Typography</a>
+                </li>
+                <li class="nav-title">Components</li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon icon-puzzle"></i> Base</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/breadcrumb.html">
+                                <i class="nav-icon icon-puzzle"></i> Breadcrumb</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/cards.html">
+                                <i class="nav-icon icon-puzzle"></i> Cards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/carousel.html">
+                                <i class="nav-icon icon-puzzle"></i> Carousel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/collapse.html">
+                                <i class="nav-icon icon-puzzle"></i> Collapse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/jumbotron.html">
+                                <i class="nav-icon icon-puzzle"></i> Jumbotron</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/list-group.html">
+                                <i class="nav-icon icon-puzzle"></i> List group</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/navs.html">
+                                <i class="nav-icon icon-puzzle"></i> Navs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/pagination.html">
+                                <i class="nav-icon icon-puzzle"></i> Pagination</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/popovers.html">
+                                <i class="nav-icon icon-puzzle"></i> Popovers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/progress.html">
+                                <i class="nav-icon icon-puzzle"></i> Progress</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/scrollspy.html">
+                                <i class="nav-icon icon-puzzle"></i> Scrollspy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/switches.html">
+                                <i class="nav-icon icon-puzzle"></i> Switches</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/tabs.html">
+                                <i class="nav-icon icon-puzzle"></i> Tabs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="base/tooltips.html">
+                                <i class="nav-icon icon-puzzle"></i> Tooltips</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon icon-cursor"></i> Buttons</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="buttons/buttons.html">
+                                <i class="nav-icon icon-cursor"></i> Buttons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="buttons/brand-buttons.html">
+                                <i class="nav-icon icon-cursor"></i> Brand Buttons</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="buttons/button-group.html">
+                                <i class="nav-icon icon-cursor"></i> Buttons Group</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="buttons/dropdowns.html">
+                                <i class="nav-icon icon-cursor"></i> Dropdowns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="buttons/loading-buttons.html">
+                                <i class="nav-icon icon-cursor"></i> Loading Buttons
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="charts.html">
+                        <i class="nav-icon icon-pie-chart"></i> Charts</a>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon fa fa-code"></i> Editors</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="editors/code-editor.html">
+                                <i class="nav-icon icon-note"></i> Code Editor
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="editors/markdown-editor.html">
+                                <i class="nav-icon fa fa-code"></i> Markdown
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="editors/text-editor.html">
+                                <i class="nav-icon icon-note"></i> Rich Text Editor
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon icon-note"></i> Forms</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="forms/basic-forms.html">
+                                <i class="nav-icon icon-note"></i> Basic Forms</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="forms/advanced-forms.html">
+                                <i class="nav-icon icon-note"></i> Advanced
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="forms/validation.html">
+                                <i class="nav-icon icon-note"></i> Validation
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="google-maps.html">
+                        <i class="nav-icon icon-map"></i> Google Maps
+                        <span class="badge badge-danger">PRO</span>
+                    </a>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon icon-star"></i> Icons</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="icons/coreui-icons.html">
+                                <i class="nav-icon icon-star"></i> CoreUI Icons
+                                <span class="badge badge-success">NEW</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="icons/flags.html">
+                                <i class="nav-icon icon-star"></i> Flags</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="icons/font-awesome.html">
+                                <i class="nav-icon icon-star"></i> Font Awesome
+                                <span class="badge badge-secondary">4.7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="icons/simple-line-icons.html">
+                                <i class="nav-icon icon-star"></i> Simple Line Icons</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon icon-bell"></i> Notifications</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="notifications/alerts.html">
+                                <i class="nav-icon icon-bell"></i> Alerts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="notifications/badge.html">
+                                <i class="nav-icon icon-bell"></i> Badge</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="notifications/modals.html">
+                                <i class="nav-icon icon-bell"></i> Modals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="notifications/toastr.html">
+                                <i class="nav-icon icon-bell"></i> Toastr
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon icon-energy"></i> Plugins</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="plugins/calendar.html">
+                                <i class="nav-icon icon-calendar"></i> Calendar
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="plugins/draggable-cards.html">
+                                <i class="nav-icon icon-cursor-move"></i> Draggable
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="plugins/sliders.html">
+                                <i class="nav-icon icon-equalizer"></i> Sliders
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="plugins/spinners.html">
+                                <i class="nav-icon fa fa-spinner"></i> Spinners
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon icon-list"></i> Tables</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="tables/tables.html">
+                                <i class="nav-icon icon-list"></i> Standard Tables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tables/datatables.html">
+                                <i class="nav-icon icon-list"></i> DataTables
+                                <span class="badge badge-danger">PRO</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lookback.html">
+                        <i class="nav-icon icon-calculator"></i> Widgets
+                        <span class="badge badge-info">NEW</span>
+                    </a>
+                </li>
+                <li class="nav-divider"></li>
+                <li class="nav-title">Extras</li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon icon-star"></i> Pages</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html" target="_top">
+                                <i class="nav-icon icon-star"></i> Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register.html" target="_top">
+                                <i class="nav-icon icon-star"></i> Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="success.html" target="_top">
+                                <i class="nav-icon icon-star"></i> Error 404</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="500.html" target="_top">
+                                <i class="nav-icon icon-star"></i> Error 500</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#">
+                        <i class="nav-icon icon-layers"></i> Apps</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="nav-icon icon-speech"></i> Invoicing</a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="apps/invoicing/invoice.html">
+                                        <i class="nav-icon icon-speech"></i> Invoice
+                                        <span class="badge badge-danger">PRO</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="nav-icon icon-speech"></i> Email</a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="apps/email/inbox.html">
+                                        <i class="nav-icon icon-speech"></i> Inbox
+                                        <span class="badge badge-danger">PRO</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="apps/email/message.html">
+                                        <i class="nav-icon icon-speech"></i> Message
+                                        <span class="badge badge-danger">PRO</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="apps/email/compose.html">
+                                        <i class="nav-icon icon-speech"></i> Compose
+                                        <span class="badge badge-danger">PRO</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-divider"></li>
+                <li class="nav-title">Labels</li>
+                <li class="nav-item d-compact-none d-minimized-none">
+                    <a class="nav-label" href="#">
+                        <i class="fa fa-circle text-danger"></i> Label danger</a>
+                </li>
+                <li class="nav-item d-compact-none d-minimized-none">
+                    <a class="nav-label" href="#">
+                        <i class="fa fa-circle text-info"></i> Label info</a>
+                </li>
+                <li class="nav-item d-compact-none d-minimized-none">
+                    <a class="nav-label" href="#">
+                        <i class="fa fa-circle text-warning"></i> Label warning</a>
+                </li>
+                <li class="nav-divider"></li>
+                <li class="nav-title">System Utilization</li>
+                <li class="nav-item px-3 d-compact-none d-minimized-none">
+                    <div class="text-uppercase mb-1">
+                        <small>
+                            <b>CPU Usage</b>
+                        </small>
+                    </div>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <small class="text-muted">348 Processes. 1/4 Cores.</small>
+                </li>
+                <li class="nav-item px-3 d-compact-none d-minimized-none">
+                    <div class="text-uppercase mb-1">
+                        <small>
+                            <b>Memory Usage</b>
+                        </small>
+                    </div>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <small class="text-muted">11444GB/16384MB</small>
+                </li>
+                <li class="nav-item px-3 mb-3 d-compact-none d-minimized-none">
+                    <div class="text-uppercase mb-1">
+                        <small>
+                            <b>SSD 1 Usage</b>
+                        </small>
+                    </div>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <small class="text-muted">243GB/256GB</small>
+                </li>
+            </ul>
+            <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+            </div>
+            <div class="ps__rail-y" style="top: 0px; height: 658px; right: 0px;">
+                <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 339px;"></div>
+            </div>
+        </nav>
+        <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+    </div>
+    <main class="main">
+
+        <div class="container-fluid">
+            <div class="animated fadeIn">
+                <div class="card" id="itemsTemplater">
+
+                    <!--多项删除-->
+                    <div class="modal fade" id="dangerm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-danger" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">提示</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>确认删除？</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                    <button class="btn btn-danger" type="button" data-toggle="modal" @click="delSeletesd()">
+                                        确定
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--单项删除-->
+                    <div class="modal fade" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-danger" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">提示</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>确认删除？</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                    <button class="btn btn-danger" type="button" data-toggle="modal" @click="confindel()">确定
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 删除成功 -->
+                    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-success" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">提示</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>删除成功</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success" type="button" data-dismiss="modal">成功</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 反馈 -->
+                    <div class="modal fade show" id="primaryModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel"
+                         style="display:none;" aria-hidden="true">
+                        <div class="modal-dialog modal-primary" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">反馈</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="card-body ">
+                                    <form class="form-horizontal" action="" method="post">
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">用户编号</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="backId"
+                                                       required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-email">姓名</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="backName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">详细地址</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="backAddress"
+                                                       required
+                                                       readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">联系电话</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="backTele"
+                                                       required
+                                                       readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" >反馈原因</label>
+                                            <div class="col-md-9">
+                                                <input type="radio" value="connect" id="back-Connect" name="back">
+                                                <label >联系异常</label>
+                                                <input type="radio" value="good" id="back-Good" name="back">
+                                                <label >用户拒收</label>
+                                                <input type="radio" value="other" id="back-Order" name="back">
+                                                <label >其他原因</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                        <button class="btn btn-primary" type="button" @click="save()">保存
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 保存成功 -->
+                    <div class="modal fade" id="successm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-success" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">提示</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>保存成功</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success" type="button" data-dismiss="modal">成功</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--查看-->
+                    <div class="modal fade show" id="InfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         style="display:none;" aria-hidden="true">
+                        <div class="modal-dialog modal-primary" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">查看</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="card-body ">
+                                    <form class="form-horizontal" action="" method="post">
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">用户编号</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="uId" required readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-email">姓名</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="uName" required readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">详细地址</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="uAddress" required
+                                                       readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">联系电话</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="uTele" required
+                                                       readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">订单编号</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="uNo" required
+                                                       readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-md-3 col-form-label" for="hf-password">备注</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control" type="text" id="uBei" required
+                                                       readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" type="button" data-dismiss="modal">关闭
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 无删除项 -->
+                    <div class="modal fade show" id="warningModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel"
+                         style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-warning" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">警告</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>无发现删除项，请重新选择！</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                    <button class="btn btn-warning" type="button" data-dismiss="modal">确定</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card-header">
+                        <i class="icon-people mt-4"></i> 快递员用户管理
+                        <div class="card-header-actions">
+                            <button class="btn  btn-ghost-secondary" type="button" @click="isdel()">
+                                <i class="icon-user-unfollow "></i>&nbsp;刷新
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-responsive-sm table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th><input @change="change" size="20" type="checkbox" v-model="allcheck">用户编号</th>
+                                <th>用户名</th>
+                                <th>订单编号</th>
+                                <th>地址</th>
+                                <th>联系电话</th>
+                                <th>订单状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <template v-for="(item,index) in items">
+                                <tr>
+                                    <td><input type="checkbox" size="20" v-model="item.isSeleted" @change="checkOne">{{item.id}}
+                                    </td>
+                                    <td>{{item.name}}</td>
+                                    <td>{{item.no}}</td>   <!--订单编号-->
+                                    <td>{{item.address}}</td>
+                                    <td>{{item.tele}}</td>
+                                    <td>
+                                        <span v-if="item.status=='已送达'"
+                                              class="badge badge-success">{{item.status}}</span>
+                                        <span v-if="item.status=='待送达'"
+                                              class="badge badge-warning">{{item.status}}</span>
+                                        <span v-if="item.status=='已反馈'"
+                                              class="badge badge-secondary">{{item.status}}</span>
+                                    </td>
+
+                                    <td>
+                                        <button class="btn btn-primary mb-1" type="button" data-toggle="modal"
+                                                data-target="#primaryModal" @click="cback(index)"><i
+                                                class="fa fa-edit"></i>反馈
+                                        </button>
+                                        <button class="btn btn-info mb-1" type="button" data-toggle="modal"
+                                                data-target="#InfoModal" @click="looku(index)"><i
+                                                class="fa fa-link"></i>查看
+                                        </button>
+                                        <button class="btn btn-success mb-1" type="button" data-toggle="modal"
+
+                                                @click="sureArr(index)"><i class="fa fa-check"></i>确认送达
+                                        </button>
+
+                                    </td>
+                                </tr>
+                            </template>
+                            </tbody>
+                        </table>
+
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" @click="Prev()">Prev</a>
+                            </li>
+                            <li class="page-item " v-for="n in pageCount" @click="pagec(n)"
+                                v-bind:class="{ active: n==pageIndex+1 }">
+                                <a class="page-link" href="#">{{n}}</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" @click="Next()">Next</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- 多项删除 -->
+
+    </main>
+
+</div>
+<footer class="app-footer">
+    <div>
+        <a href="https://coreui.io/pro/">CoreUI Pro</a>
+        <span>© 2018 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+        <span>Powered by</span>
+        <a href="https://coreui.io/pro/">CoreUI Pro</a>
+    </div>
+</footer>
+
+
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock-min.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock.js"></script>
+
+<script>
+    var tab;
+    var items = [];
+    $(function () {
+
+        $.getJSON("/orders", function (response) {
+            items = response;
+            for (var i = 0; i < items.length; i++) {
+                items[i].isSeleted = false;
+            }
+            tab = new Vue({
+                el: '#itemsTemplater',
+                data: {
+                    items: items,
+                    Id: -1,
+                    index_check: 0,
+                    allcheck: false,
+                    Index: -1,
+                    editItem: {id: null, name: null, address: null, tele: null, status: null},
+                    pageSize: 10,
+                    pageIndex: 0,
+                    total: items.length,
+                    seaItem: {id: null, name: null, address: null, tele: null, status: null},
+                    checkstatus: -1,
+                    sure: -1
+
+                },
+                computed: {
+                    //页面起始
+                    pageItems: function () {
+                        var startIndex = tab.pageIndex * tab.pageSize;
+                        var endIndex = startIndex + tab.pageSize - 1;
+
+                        return tab.items.filter(function (value, index) {
+                            return (index >= startIndex && index <= endIndex);
+                        });
+                    },
+
+                    //页面数
+                    pageCount: function () {
+
+                        var count = Math.ceil(this.total / this.pageSize);
+
+                        return count;
+                    }
+                },
+
+
+                methods: {
+
+                    change() {
+                        tab.items.forEach(item => item.isSeleted = tab.allcheck);
+                    },
+
+                    //反选
+                    checkOne() {
+                        tab.allcheck = tab.items.every(item => item.isSeleted);
+                    },
+
+                    isdel: function () {
+                        $.ajaxSettings.async = false;
+                        for(var i=0;i<items.length;i++){
+                            if(items[i].status=="已送达"){
+                                $.get("/orders/delete/"+tab.items[i].id,function (respones,status) {
+                                    tab.items.splice(i,1);
+                                });
+                                i--;
+                            }
+                        }
+                        $.ajaxSettings.as = true;
+                    },
+                    cback:function(i){
+                        var form = document.getElementsByClassName('form-horizontal')[0];
+                        form.classList.remove('was-validated');
+                        tab.Index = i;
+                        var bid = document.getElementById("backId");
+                        var bname = document.getElementById("backName");
+                        var baddress = document.getElementById("backAddress");
+                        var btele = document.getElementById("backTele");
+
+                        bid.value = tab.items[tab.Index].id;
+                        bname.value = tab.items[tab.Index].name;
+                        baddress.value = tab.items[tab.Index].address;
+                        btele.value = tab.items[tab.Index].tele;
+
+
+                    },
+
+                    save:function () {
+                        var bname = document.getElementById("backName");
+                        var baddress = document.getElementById("backAddress");
+                        var btele = document.getElementById("backTele");
+                        var bconn = document.getElementById("back-Connect");
+                        var bgood = document.getElementById("back-Good");
+                        var borders = document.getElementById("back-Order");
+                        tab.items[tab.Index].name = bname.value;
+                        tab.items[tab.Index].address = baddress.value;
+                        tab.items[tab.Index].tele = btele.value;
+                        if (bconn.checked == true || bgood.checked==true || borders.checked==true ) {
+
+                                tab.items[tab.Index].status = "已反馈";
+                            }
+                        $.post("/orders/create",
+                            {
+                                id: tab.Index + 1,
+                                name: tab.items[tab.Index].name,
+                                address: tab.items[tab.Index].address,
+                                tele: tab.items[tab.Index].tele,
+                                no:tab.items[tab.Index].no,
+                                remarks:tab.items[tab.Index].remarks,
+                                status: tab.items[tab.Index].status,
+                            },
+                            function (data, status) {
+                            });
+                        $('#primaryModal').modal('hide');
+                        $('#successm').modal('show');
+
+
+                    },
+
+                    looku:function (i) {
+                        var form = document.getElementsByClassName('form-horizontal')[0];
+                        form.classList.remove('was-validated');
+                        tab.Index = i;
+                        var uid = document.getElementById("uId");
+                        var uname=document.getElementById("uName");
+                        var uaddress=document.getElementById("uAddress");
+                        var utele=document.getElementById("uTele");
+                        var uno=document.getElementById("uNo");
+                        var ubei=document.getElementById("uBei");
+                        uid.value=tab.items[tab.Index].id;
+                        uname.value=tab.items[tab.Index].name;
+                        uaddress.value=tab.items[tab.Index].address;
+                        utele.value=tab.items[tab.Index].tele;
+                        uno.value=tab.items[tab.Index].no;
+                        ubei.value=tab.items[tab.Index].remarks;
+
+                    },
+                    sureArr:function (i) {
+                         tab.Index=i;
+                         tab.items[tab.Index].status="已送达";
+                        $.post("/orders/create",
+                            {
+                                id: tab.Index + 1,
+                                name: tab.items[tab.Index].name,
+                                address: tab.items[tab.Index].address,
+                                tele: tab.items[tab.Index].tele,
+                                no:tab.items[tab.Index].no,
+                                remarks:tab.items[tab.Index].remarks,
+                                status: tab.items[tab.Index].status,
+                            },
+                            function (data, status) {
+                            });
+
+                    },
+
+
+                }
+
+            });
+            return;
+        });
+
+    });
+</script>
+
+
+<script type="text/javascript" src="vendors/chart.js/js/Chart.min.js" class="view-script"></script>
+<script type="text/javascript" src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js"
+        class="view-script"></script>
+<script type="text/javascript" src="js/main.js" class="view-script"></script>
+
+
+</body>
+
+</html>

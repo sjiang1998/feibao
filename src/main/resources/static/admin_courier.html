@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v2.0.0
+* @link https://coreui.io
+* Copyright (c) 2018 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://coreui.io/license)
+-->
+
+<html lang="en">
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>废宝快递员管理页面</title>
+    <!-- Icons-->
+    <link href="vendors/@coreui/icons/css/coreui-icons.min.css" rel="stylesheet">
+    <link href="vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed">
+
+
+<header class="app-header navbar" style="background-color: #dcfbd0">
+
+    <a class="navbar-brand px-sm-5" href="#">
+        <!--<i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>-->
+        <h5 style="color: #0b731d">废宝后台管理</h5>
+    </a>
+
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-sm-5">
+            <a class="btn btn-link  btn-ghost-success  btn-block " href="admin_user.html">用户管理</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="btn btn-link  btn-ghost-success  btn-block active" href="admin_courier.html">快递员管理</a>
+        </li>
+        <li class="nav-item px-sm-5">
+            <a class="btn btn-link  btn-ghost-success  btn-block " href="admin_order.html">订单管理</a>
+        </li>
+
+    </ul>
+    <!--搜索框-->
+    <form class="form-inline px-sm-5">
+        <input class="form-control mr-sm-2" type="search" placeholder="名称" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查找</button>
+    </form>
+    <!--</nav>-->
+
+
+
+
+    <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header>
+
+
+<div class="app-body">
+
+    <main class="main">
+
+        <div class="container-fluid">
+            <div class="animated fadeIn">
+                <div class="card" id="itemsTemplate">
+
+                    <!--编辑-->
+                    <div class="modal fade" id="primaryModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-primary" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">编辑</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <form class="form-horizontal" action="" method="post">
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label">员工编号</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" type="text" id="eNo" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label">姓名</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control form-control-sm" type="text" id="eName"
+                                                       pattern="^([\u4e00-\u9fa5.A-Za-z][\u4e00-\u9fa5.A-Za-z0-9-_]{1,4})$"
+                                                       required>
+                                                <div class="invalid-feedback">
+                                                    员工名必须1~4位（汉字，不能以下划线、字符、数字开头），不能为空。
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label">电话号码</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="eTele" type="text"
+                                                       name="input-normal">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label">上岗时间</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="eYear" type="text"
+                                                       name="input-normal">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label">状态</label>
+                                            <div class="col-sm-6">
+                                                <input type="radio" value="reason" id="e-Thing" name="back">
+                                                <label>事假</label>
+                                                <input type="radio" value="reason" id="e-Ill" name="back">
+                                                <label>病假</label>
+                                                <input type="radio" value="reason" id="e-Nwork" name="back">
+                                                <label>旷工</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                    <button class="btn btn-primary" type="button" @click="save()">保存</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content-->
+                        </div>
+                        <!-- /.modal-dialog-->
+                    </div>
+
+                    <!--新增-->
+                    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-primary" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">新增员工信息</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <form class="form-horizontal" action="" method="post">
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label">员工编号</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" type="text" id="aNo" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label">姓名</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control form-control-sm" type="text" id="aName"
+                                                       pattern="^([\u4e00-\u9fa5.A-Za-z][\u4e00-\u9fa5.A-Za-z0-9-_]{1,4})$"
+                                                       required>
+                                                <div class="invalid-feedback">
+                                                    员工名必须1~4位（汉字，不能以下划线、字符、数字开头），不能为空。
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label">电话号码</label>
+                                            <div class="col-sm-6">
+                                                <input class="form-control" id="aTele" type="text"
+                                                       name="input-normal">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-5 col-form-label">上岗时间</label>
+                                            <div class="col-sm-2">
+                                                <input class="form-control" id="aYear" type="text">年
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input class="form-control" id="aMonth" type="text">月
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <input class="form-control" id="aDate" type="text">日
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="button" id="saves" @click="add()">保存
+                                    </button>
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content-->
+                        </div>
+                        <!-- /.modal-dialog-->
+                    </div>
+
+                    <!-- 单项删除 -->
+                    <div class="modal fade" id="dangerModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-danger" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">提示</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>确认删除？</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                    <button class="btn btn-danger" type="button" data-toggle="modal"
+                                            @click="confindel()">
+                                        确定
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 多项删除 -->
+                    <div class="modal fade" id="dangerm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                         style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-danger" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">提示</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>确认删除？</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+                                    <button class="btn btn-danger" type="button" data-toggle="modal"
+                                            @click="delSeletesd()">
+                                        确定
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 可视化 -->
+                    <div class="modal fade" id="warningModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-primary" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">接单详情</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" style="height:70%;width:100%;">
+                                    <canvas id="currentMonthChart"></canvas>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">确认</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- 删除成功 -->
+                    <div class="modal fade" id="successModal" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-success" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">提示</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>删除成功</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-success" type="button" data-dismiss="modal">成功</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--保存成功-->
+                    <div class="modal fade" id="successModall" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-success" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">成功</h4>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>保存成功</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">成功</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content-->
+                        </div>
+                        <!-- /.modal-dialog-->
+                    </div>
+
+                    <div class="card-header">
+                        <i class="icon-people mt-4"></i> 快递员管理
+                        <div class="card-header-actions">
+                            <a class="card-header-action btn-setting" href="#" data-toggle="modal"
+                               data-target="#infoModal" >
+                                <i class="icon-plus"></i> 新增
+                            </a>
+                            <!--<a class="card-header-action btn-close" href="#" data-toggle="modal" @click="isdel()">-->
+                                <!--<i class="icon-trash"></i> 删除-->
+                            <!--</a>-->
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-responsive-sm table-bordered">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox" name="checkbox" value="checkbox" id="Selection"
+                                           v-model="allcheck" @change="change"></th>
+                                <th>姓名</th>
+                                <th>电话号码</th>
+                                <th>上岗时间</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tbody">
+                            <tr v-for="(item,index) in items">
+                                <td><input type="checkbox" name="checkbox" value="checkbox"
+                                           v-model="item.isSeleted" @change="checkOne"/>{{item.id}}
+                                </td>
+                                <td>{{item.cname}}</td>
+                                <td>{{item.ctele}}</td>
+                                <td>{{item.year}}</td>
+                                <td>
+                                   <span v-if="item.cstatus=='旷工'"
+                                         class="badge badge-secondary">{{item.cstatus}}</span>
+                                    <span v-if="item.cstatus=='事假'"
+                                          class="badge badge-warning">{{item.cstatus}}</span>
+                                    <span v-if="item.cstatus=='病假'"
+                                          class="badge badge-info">{{item.cstatus}}</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary" type="button" data-toggle="modal"
+                                            data-target="#primaryModal" @click="edit(index)"><i
+                                            class="fa fa-edit"></i>编辑
+                                    </button>
+                                    <button class="btn btn-danger" type="button" data-toggle="modal"
+                                            data-target="#dangerModal" @click="del(index)"><i
+                                            class="fa fa-trash-o"></i>删除
+                                    </button>
+                                    <button class="btn btn-primary" type="button" data-toggle="modal"
+                                            data-target="#warningModal" @click="detail(index)"><i
+                                            class="fa fa-edit"></i>接单详情
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" @click="Prev()">Prev</a>
+                            </li>
+                            <li class="page-item" v-for="n in pageCount" @click="pages(n)"
+                                v-bind:class="{ active: n==pageIndex+1 }">
+                                <a class="page-link">{{n}}</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" @click="Next()">Next</a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+    </main>
+</div>
+
+
+<footer class="app-footer">
+    <div>
+        <a href="https://coreui.io">CoreUI</a>
+        <span>&copy; 2018 creativeLabs.</span>
+    </div>
+    <div class="ml-auto">
+        <span>Powered by</span>
+        <a href="https://coreui.io">CoreUI</a>
+    </div>
+</footer>
+
+<!-- CoreUI and necessary plugins-->
+<script src="vendors/jquery/js/jquery.min.js"></script>
+<script src="vendors/popper.js/js/popper.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/pace-progress/js/pace.min.js"></script>
+<script src="vendors/perfect-scrollbar/js/perfect-scrollbar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock-min.js"></script>
+<script src="https://cdn.bootcss.com/Mock.js/1.0.0/mock.js"></script>
+
+
+<!--快递员管理-->
+<script>
+    var all;
+    var items = [];
+
+    $(function () {
+        $.getJSON("/courier", function (response) {
+            items = response;
+            var i;
+            for (i = 0; i < items.length; i++) {
+                items[i].isSeleted = false;
+            }
+            all = new Vue({
+                el: '#itemsTemplate',
+                data: {
+                    items: items,
+                    Id: -1,
+                    allcheck: false,
+                    Index: -1,
+                    edititem: {
+                        name: null,
+                        telephone: null,
+                        number: null
+                    },
+                    pageIndex: 0,
+                    pageSize: 10,
+                    total: items.length,
+
+                    // addItem: {
+                    //     id: 0,
+                    //     cname: null,
+                    //     ctele: null,
+                    //     cno: null,
+                    //     year: null,
+                    //     cstatus: null,
+                    //     long_num: 0,
+                    //     short_num: 0
+                    // }
+                },
+                computed: {
+                    pageitems: function () {
+                        var startIndex = all.pageIndex * all.pageSize;
+                        var endIndex = startIndex + all.pageSize - 1;
+                        return all.items.filter(function (value, index) {
+                            return (
+                                index >= startIndex && index <= endIndex
+                            );
+                        });
+                    },
+                    pageCount: function () {
+                        var count = Math.ceil(this.total / this.pageSize);
+                        return count;
+                    }
+                },
+                methods: {
+                    //单项删除
+                    del: function (i) {
+                        all.Index = i;
+                    },
+                    confindel: function () {
+                        $('#dangerModal').modal('hide');
+                        $('#successModal').modal('show');
+                        $.get("/courier/delete/" + all.items[all.Index].id, function (response, status) {
+                            all.items.splice(all.Index, 1);
+                        });
+
+                    },
+                    //
+                    //全选
+                    change() {
+                        all.items.forEach(item => item.isSeleted = all.allcheck
+                    )
+                        ;
+                    },
+
+                    //反选
+                    checkOne() {
+                        all.allcheck = all.items.every(item => item.isSeleted
+                    )
+                        ;
+                    },
+
+                    // //多项无删除项
+                    // isdel: function () {
+                    //     var i = 0;
+                    //     while (i < items.length) {
+                    //         if (items[i].isSeleted) {
+                    //             break;
+                    //         } else {
+                    //             i++;
+                    //         }
+                    //     }
+                    //     if (i == items.length) {
+                    //         $('#warningModal').modal('show');
+                    //     } else {
+                    //         $('#dangerm').modal('show');
+                    //     }
+                    // },
+                    //
+                    // //多项确认删除
+                    // delSeletesd: function () {
+                    //     $('#dangerm').modal('hide');
+                    //     $('#successModal').modal('show');
+                    //     for (var i = 0; i <= items.length; i++) {
+                    //         if (items[i].isSeleted) {
+                    //             tab.items.splice(i, 1);
+                    //             i--;
+                    //         }
+                    //     }
+                    // },
+
+                    // //编辑
+                    edit: function (i) {
+                        var form = document.getElementsByClassName('form-horizontal')[0];
+                        form.classList.remove('was-validated');
+                        all.Index = i;
+                        var ename = document.getElementById("eName");
+                        var eno = document.getElementById("eNo");
+                        var etele = document.getElementById("eTele");
+                        var eyear = document.getElementById("eYear");
+                        var ething = document.getElementById("e-Thing");
+                        var eill = document.getElementById("e-Ill");
+                        var enwork = document.getElementById("e-Nwork");
+
+                        ename.value = all.items[all.Index].cname;
+                        eno.value = all.items[all.Index].cno;
+                        etele.value = all.items[all.Index].ctele;
+                        eyear.value = all.items[all.Index].year;
+                        if (all.items[all.Index].cstatus == "病假") {
+                            eill.checked = true;
+                        }
+                        if (all.items[all.Index].cstatus == "事假") {
+                            ething.checked = true;
+                        }
+                        if (all.items[all.Index].cstatus == "旷工") {
+                            enwork.checked = true;
+                        }
+                        if (all.items[all.Index].cstatus == null) {
+                            eill.checked = false;
+                            ething.checked = false;
+                            enwork.checked = false;
+                        }
+                    },
+                    // //保存
+                    save: function () {
+                        var ename = document.getElementById("eName");
+                        var eno = document.getElementById("eNo");
+                        var etele = document.getElementById("eTele");
+                        var eyear = document.getElementById("eYear");
+                        var ething = document.getElementById("e-Thing");
+                        var eill = document.getElementById("e-Ill");
+                        var enwork = document.getElementById("e-Nwork");
+                        all.items[all.Index].cname = ename.value;
+                        all.items[all.Index].cno = eno.value;
+                        all.items[all.Index].ctele = etele.value;
+                        all.items[all.Index].year = eyear.value;
+                        if (ething.checked == true) {
+                            all.items[all.Index].cstatus = "事假";
+                        }
+                        if (eill.checked == true) {
+                            all.items[all.Index].cstatus = "病假";
+                        }
+                        if (enwork.checked == true) {
+                            all.items[all.Index].cstatus = "旷工";
+                        }
+                        if (ething.checked == false && eill.checked == false && enwork.checked == false) {
+                            all.items[all.Index].cstatus = null;
+                        }
+                        $.post("/courier/create",
+                            {
+                                id: all.Index + 1,
+                                cname: all.items[all.Index].cname,
+                                cno: all.items[all.Index].cno,
+                                ctele: all.items[all.Index].ctele,
+                                year: all.items[all.Index].year,
+                                cstatus: all.items[all.Index].cstatus,
+                                long_num: all.items[all.Index].long_num,
+                                short_num: all.items[all.Index].short_num
+                            },
+                            function (data, status) {
+                            });
+                        $('#primaryModal').modal('hide');
+                        $('#successModall').modal('show');
+
+                    },
+
+
+                    add: function () {
+                        var addItem= {id: all.items.length+1, cname: null, ctele: null, cno: null, year: null, cstatus: null, long_num: 0, short_num: 0};
+                        var ano = document.getElementById("aNo");
+                        var aname = document.getElementById("aName");
+                        var atele = document.getElementById("aTele");
+                        var ayear = document.getElementById("aYear");
+                        var amonth = document.getElementById("aMonth");
+                        var adate = document.getElementById("aDate");
+                        addItem.cno = ano.value;
+                        addItem.cname = aname.value;
+                        addItem.ctele = atele.value;
+                        addItem.year = ayear.value + '年' + amonth.value + '月' + adate.value + '日';
+                        $.post("/courier/create",
+                            {
+                                id: addItem.id,
+                                cname: addItem.cname,
+                                ctele: addItem.ctele,
+                                long_num: addItem.long_num,
+                                short_num: addItem.short_num,
+                                cno: addItem.cno,
+                                year: addItem.year,
+                                cstatus: addItem.cstatus,
+                            },
+                            function (data, status) {
+                            });
+                        all.items.push(addItem);
+                        $('#infoModal').modal('hide');
+                        $('#successModall').modal('show');
+                        ano.value=null;
+                        aname.value=null;
+                        atele.value=null;
+                        ayear.value=null;
+                        amonth.value=null;
+                        adate.value=null;
+                    },
+
+                    detail:function (i) {
+                        all.Index=i;
+                        var data = {
+                            labels: ["长途","短途"],
+                            datasets: [
+                                {
+                                    backgroundColor: ["rgb(75, 192, 192)","rgb(54, 162, 235)"],
+                                    data: [all.items[all.Index].long_num,all.items[all.Index].short_num]
+                                }
+                            ]
+                        };
+
+                        var options = {};
+                        var ctx = document.getElementById("currentMonthChart").getContext("2d");
+                        var currentMonthChart = new Chart(ctx,{
+                            type: 'pie',//doughnut是甜甜圈?图形,pie是饼状图
+                            data: data,
+                            options:options
+                        });
+                        data=null;
+
+
+                    }
+
+                    // //上一页
+                    // Prev() {
+                    //     if (this.pageIndex > 0) {
+                    //         this.pageIndex = this.pageIndex - 1;
+                    //     }
+                    // },
+                    // //当前页
+                    // pages: function (sa) {
+                    //     this.pageIndex = sa - 1;
+                    // },
+                    // //下一页
+                    // Next() {
+                    //     if (this.pageIndex < this.pageCount - 1) {
+                    //         this.pageIndex = this.pageIndex + 1;
+                    //     }
+                    // },
+                    // //新增
+                    // add: function () {
+                    //     if (this.addItem.id == 0) {
+                    //         this.addItem.id = this.items.length + 1;
+                    //         this.items.push(this.addItem);
+                    //         this.addItem = {
+                    //             id: 0,
+                    //             name: null,
+                    //             telephone: null,
+                    //             address: null
+                    //         }
+                    //     }
+                    //     $('#infoModal').modal('hide');
+                    //     $('#successModall').modal('show');
+                    // },
+                }
+            });
+            return
+        });
+    });
+</script>
+
+
+<script type="text/javascript" src="vendors/chart.js/js/Chart.min.js" class="view-script"></script>
+<script type="text/javascript" src="vendors/@coreui/coreui-plugin-chartjs-custom-tooltips/js/custom-tooltips.min.js"
+        class="view-script"></script>
+<script type="text/javascript" src="js/main.js" class="view-script"></script>
+
+</body>
+
+</html>
